@@ -1,0 +1,23 @@
+{
+  "name": "onlineshop",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "node backend/server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/swapnil135/MERN-e-commerce-website.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/swapnil135/MERN-e-commerce-website/issues"
+  },
+  "homepage": "https://github.com/swapnil135/MERN-e-commerce-website#readme"
+}

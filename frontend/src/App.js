@@ -1,10 +1,28 @@
 import React from 'react'
+import { BrowserRouter as Router, Route } from 'react-router-dom'
+import { Container } from 'react-bootstrap'
+import Header from './Components/Header'
+import Footer from './Components/Footer'
+import HomeScreen from './Screens/HomeScreen'
+import ProductScreen from './Screens/ProductScreen'
 
 function App() {
   return (
-    <div className="App">
-      <h1>Welcome to onlinesop</h1>
-    </div>
+    <Router>
+      <Header />
+      <main className="py-3">
+        <Container>
+          {/* so when the url is exactly ./ we are routed to the homescreen component */}
+          <Route path='/' component={HomeScreen} exact />
+          <Route path='/product/:id' component={ProductScreen} />
+
+        </Container>
+
+
+      </main>
+      <Footer />
+
+    </Router>
   );
 }
 

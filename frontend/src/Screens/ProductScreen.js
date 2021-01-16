@@ -1,14 +1,25 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { Row, Col, Image, ListGroup, Card, Button, color } from 'react-bootstrap'
 import Rating from '../Components/Rating'
-import products from '../products'
+import axios from 'axios'
 
 
 export const ProductScreen = ({ match }) => {
     // we need to find the product object according to the url
     // params after : are stored in match.params
-    const product = products.find(p => p._id === match.params.id)
+    const [product, setProduct] = useState({}); // and what we want to set as default is passed in useState(); Empty array in thsi case.
+    //useeffect and useState are hooks
+    // whatver we put here in the useffect, runs as soon as the componenet loads
+    useEffect(() => {
+        const fetchProduct = async () => {
+            const { data } = await axios.get(`/api/products/${match.params.id}`)
+
+            setProduct(data)
+        }
+        fetchProduct()
+    }, [])
+
     return (
         <>
             <Link className='btn btn-light my-3'>

@@ -28,11 +28,11 @@ const productSchema = mongoose.Schema(
             type: String,
             required: true
         },
-        Category: {
+        category: {
             type: String,
             required: true,
         },
-        Description: {
+        description: {
             type: String,
             required: true,
         },
